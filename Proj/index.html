@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    function initialize()
+        {
+            //The HTML object for the display.
+            numberOutput = document.getElementById("numberout");
+            number2Output = document.getElementById("number2out");
+            
+            //The actual number that will change during the course of the program.
+            num = 0;
+            num2 = 0;
+            
+            display();
+        }
+
+    function randomize(){
+
+        num = parseInt( Math.random() * 6) + 1 ;
+        num2 = parseInt( Math.random() * 6) + 1 ;
+    
+        display()
+
+    }
+    function display()
+			{
+				numberOutput.innerHTML = "Dice 1: " + num + " Dice 2: " + num2;
+                number2Output.innerHTML = "Sum: " + (num + num2);
+			}
+        </script>
+</head>
+<body onload = "initialize();">
+		<h1 id = "numberout"></h1>
+        <h1 id = "number2out"></h1>
+		<hr />
+		<button onclick = "randomize();">Roll Dice</button> 
+	</body>
+</html>
